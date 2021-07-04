@@ -1,0 +1,15 @@
+name: maker
+arch: amd64
+platform: linux
+version: 'v${VERSION}'
+section: default
+maintainer: ${AUTHOR} <${EMAIL}>
+description: |
+    maker is a make augmentor to support dotenv files and Makefile help
+license: Apache-2.0
+files:
+    dist/maker_linux_amd64/maker: /usr/bin/maker
+
+rpm:
+    group: Unspecified
+    compression: lzma

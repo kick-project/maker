@@ -1,0 +1,16 @@
+class Kick < Formula
+  desc "make augementor to support dotenv files and help for Makefiles"
+  homepage "https://kick-project.github.io/maker/"
+  url "${BASEURL}/maker-${VERSION}.tar.gz"
+  version "${VERSION}"
+  sha256 "${SHA256}"
+  license "APACHE-2.0"
+
+  depends_on "go@1.16" => :build
+
+  def install
+    ENV["CGO_ENABLED"] = "1"
+    system "go", "install", "./cmd/maker"
+    bin.install ENV["GOPATH"] + "/bin/maker"
+  end
+end
