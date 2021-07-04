@@ -11,8 +11,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/dexterp/maker/internal/resources/dfaults"
-	"github.com/dexterp/maker/internal/resources/errs"
+	"github.com/kick-project/maker/internal/resources/dfaults"
+	"github.com/kick-project/maker/internal/resources/errs"
 	"github.com/joho/godotenv"
 )
 

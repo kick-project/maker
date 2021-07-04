@@ -6,7 +6,7 @@ import (
 	"log"
 	"sync"
 
-	"github.com/dexterp/maker/internal/resources/exit"
+	"github.com/kick-project/maker/internal/resources/exit"
 )
 
 type Level int

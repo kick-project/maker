@@ -6,11 +6,11 @@ import (
 	"log"
 	"os"
 
-	"github.com/dexterp/maker/internal/resources/errs"
-	"github.com/dexterp/maker/internal/resources/exit"
-	"github.com/dexterp/maker/internal/resources/logger"
-	"github.com/dexterp/maker/internal/services/dotenv"
-	"github.com/dexterp/maker/internal/services/menu"
+	"github.com/kick-project/maker/internal/resources/errs"
+	"github.com/kick-project/maker/internal/resources/exit"
+	"github.com/kick-project/maker/internal/resources/logger"
+	"github.com/kick-project/maker/internal/services/dotenv"
+	"github.com/kick-project/maker/internal/services/menu"
 )
 
 // DI dependency injection struct

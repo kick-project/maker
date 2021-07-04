@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/dexterp/maker/internal/resources/exit"
+	"github.com/kick-project/maker/internal/resources/exit"
 )
 
 func Test_Exit(t *testing.T) {

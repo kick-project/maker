@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/dexterp/maker/internal/resources/errs"
+	"github.com/kick-project/maker/internal/resources/errs"
 )
 
 // Menu provides menu options for make

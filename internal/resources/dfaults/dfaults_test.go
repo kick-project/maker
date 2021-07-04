@@ -3,7 +3,7 @@ package dfaults_test
 import (
 	"testing"
 
-	"github.com/dexterp/maker/internal/resources/dfaults"
+	"github.com/kick-project/maker/internal/resources/dfaults"
 	"github.com/stretchr/testify/assert"
 	"syreclabs.com/go/faker"
 )

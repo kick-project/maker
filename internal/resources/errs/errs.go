@@ -7,8 +7,8 @@ import (
 
 	"log"
 
-	"github.com/dexterp/maker/internal/resources/exit"
-	"github.com/dexterp/maker/internal/resources/logger"
+	"github.com/kick-project/maker/internal/resources/exit"
+	"github.com/kick-project/maker/internal/resources/logger"
 )
 
 // Handler error handling

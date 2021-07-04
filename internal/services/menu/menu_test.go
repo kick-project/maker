@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dexterp/maker/internal/di"
-	"github.com/dexterp/maker/internal/resources/testtools"
+	"github.com/kick-project/maker/internal/di"
+	"github.com/kick-project/maker/internal/resources/testtools"
 	"github.com/stretchr/testify/assert"
 )
 

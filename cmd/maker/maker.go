@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
-	"github.com/dexterp/maker/internal"
-	"github.com/dexterp/maker/internal/di"
-	"github.com/dexterp/maker/internal/options"
+	"github.com/kick-project/maker/internal"
+	"github.com/kick-project/maker/internal/di"
+	"github.com/kick-project/maker/internal/options"
 )
 
 func main() {

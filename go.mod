@@ -1,4 +1,4 @@
-module github.com/dexterp/maker
+module github.com/kick-project/maker
 
 go 1.16
 
