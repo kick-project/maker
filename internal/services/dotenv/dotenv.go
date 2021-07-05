@@ -11,9 +11,9 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/joho/godotenv"
 	"github.com/kick-project/maker/internal/resources/dfaults"
 	"github.com/kick-project/maker/internal/resources/errs"
-	"github.com/joho/godotenv"
 )
 
 // Dotenv shell wrapper for Makefile
