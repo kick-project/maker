@@ -39,5 +39,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export PATH=$(go env GOPATH)/bin:$PATH
-          make release_publish
+          make release_github
 

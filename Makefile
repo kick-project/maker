@@ -105,6 +105,7 @@ _package: ## Create an RPM, Deb, Homebrew package
 	@XCOMPILE=true make build
 	@VERSION=$(VERSION) envsubst < nfpm.yaml.in > nfpm.yaml
 	$(MAKE) dist/maker.rb
+	$(MAKE) dist/maker-$(VERSION).rb
 	$(MAKE) tmp/maker.rb
 	$(MAKE) dist/$(NAME)-$(VERSION).$(ARCH).rpm
 	$(MAKE) dist/$(NAME)_$(VERSION)_$(GOARCH).deb
