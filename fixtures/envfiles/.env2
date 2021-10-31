@@ -1,0 +1,3 @@
+MAKER_GLOBAL=From .env2
+MAKER_VAR1=From .env2
+MAKER_VAR2=From .env2

@@ -1,6 +1,7 @@
 package dotenv_test
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -37,6 +38,19 @@ func pathEnvfile() string {
 
 func pathMakeFile() string {
 	return filepath.Join(testtools.FixtureDir(), "menu", "Makefile")
+}
+
+func TestDotenv_Load(t *testing.T) {
+	d := makeDotenv()
+	os.Setenv("MAKER_GLOBAL", "From global")
+	env1 := filepath.Join(testtools.FixtureDir(), "envfiles", ".env1")
+	env2 := filepath.Join(testtools.FixtureDir(), "envfiles", ".env2")
+	varfiles := fmt.Sprintf("%s,%s", env1, env2)
+	d.Load(varfiles)
+
+	assert.Equal(t, os.Getenv("MAKER_GLOBAL"), "From global")
+	assert.Equal(t, os.Getenv("MAKER_VAR1"), "From .env1")
+	assert.Equal(t, os.Getenv("MAKER_VAR2"), "From .env2")
 }
 
 func TestDotenv_WrapTarget(t *testing.T) {
