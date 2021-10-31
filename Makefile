@@ -166,18 +166,21 @@ bumpmajor: ## Increment VERSION file ${major}.0.0 - major bump
 	git fetch --tags
 	versionbump --checktags major VERSION
 	$(MAKE) internal/version.go
+	$(MAKE) nfpm.yaml
 
 .PHONY: bumpminor
 bumpminor: ## Increment VERSION file 0.${minor}.0 - minor bump
 	git fetch --tags
 	versionbump --checktags minor VERSION
 	$(MAKE) internal/version.go
+	$(MAKE) nfpm.yaml
 
 .PHONY: bumppatch
 bumppatch: ## Increment VERSION file 0.0.${patch} - patch bump
 	git fetch --tags
 	versionbump --checktags patch VERSION
 	$(MAKE) internal/version.go
+	$(MAKE) nfpm.yaml
 
 .PHONY: getversion
 getversion:

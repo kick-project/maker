@@ -1,9 +1,9 @@
 name: maker
 arch: amd64
 platform: linux
-version: 'v1.0.0'
+version: 'v1.1.0'
 section: default
-maintainer:  <>
+maintainer: Dexter Plameras <dexterp@gmail.com>
 description: |
     maker is a make augmentor to support dotenv files and Makefile help
 license: Apache-2.0
