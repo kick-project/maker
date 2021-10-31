@@ -53,6 +53,7 @@ func (i *DI) MakeDotenv() *dotenv.Dotenv {
 		return i.cacheDotenv
 	}
 	i.cacheDotenv = dotenv.Defaults(&dotenv.Dotenv{
+		Exit:   i.MakeExitHandler(),
 		Errs:   i.MakeErrorHandler(),
 		Prefix: i.Prefix,
 	})

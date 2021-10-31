@@ -2,6 +2,7 @@ package dotenv
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -14,11 +15,13 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/kick-project/maker/internal/resources/dfaults"
 	"github.com/kick-project/maker/internal/resources/errs"
+	"github.com/kick-project/maker/internal/resources/exit"
 )
 
 // Dotenv shell wrapper for Makefile
 type Dotenv struct {
 	Errs   errs.HandlerIface
+	Exit   exit.HandlerIface
 	Prefix string
 	Stdin  io.Reader
 	Stdout io.Writer
@@ -28,6 +31,9 @@ type Dotenv struct {
 func Defaults(dotenv *Dotenv) *Dotenv {
 	if dotenv == nil {
 		dotenv = &Dotenv{}
+	}
+	if dotenv.Exit == nil {
+		dotenv.Exit = &exit.Handler{}
 	}
 	if dotenv.Stdin == nil {
 		dotenv.Stdin = os.Stdin
@@ -70,11 +76,20 @@ func (i *Dotenv) Load(envFiles string) {
 }
 
 func (i *Dotenv) WrapTarget(envFiles, makefile, target string, args ...string) {
+	i.hasMakefile(makefile)
 	t := i.hasTarget(makefile, target)
 	if t == "" {
-		return
+		fmt.Fprintf(i.Stderr, "maker: *** No rule to make target '%s'. Stop.\n", target)
+		i.Exit.Exit(2)
 	}
 	i.Exec(envFiles, `make`, t)
+}
+
+func (i *Dotenv) hasMakefile(makefile string) {
+	if _, err := os.Stat(makefile); errors.Is(err, os.ErrNotExist) {
+		fmt.Fprintf(i.Stderr, "maker: *** Makefile does not exists '%s'. Stop\n", makefile)
+		i.Exit.Exit(3)
+	}
 }
 
 func (i *Dotenv) hasTarget(makefile, target string) string {
