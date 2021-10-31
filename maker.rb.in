@@ -1,4 +1,4 @@
-class Kick < Formula
+class Maker < Formula
   desc "make augementor to support dotenv files and help for Makefiles"
   homepage "https://kick-project.github.io/maker/"
   url "${BASEURL}/maker-${VERSION}.tar.gz"
