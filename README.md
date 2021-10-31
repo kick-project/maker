@@ -4,6 +4,8 @@
 
 maker a tool that augments make with Makefile menu help, dotenv support
 
+# Examples
+
 ## Example Help
 
 This help output
@@ -83,8 +85,48 @@ MYSECRET=MySeceret
 ```
 
 Maker will not override any existing environment variables. The default order of
-presedence is.
+precedence is.
 
 1. Global environment variables.
 2. Home directory `~/.env` file.
 3. The current folders `.env` file.
+
+# Help
+
+```
+# maker --help
+maker
+
+Usage:
+  maker [--dotenv=<files>] [--scan=<makefile>] [--prefix=<prefix>] <target>
+  maker --menu=<makefile>
+
+Options:
+  -h --help          Show this screen
+  --version          Show version
+  --dotenv=<files>   List of comma separated paths to load dotenv files [default: ~/.env,.env]
+  --menu=<makefile>  Print Makefile menu
+  --prefix=<prefix>  Scan for "<target>" then "<prefix><target>" when scanning makefiles [default: "_"]
+  --scan=<makefile>  Scan make makefile for targets and wrap with dotenv variables [default: Makefile]
+  <target>           makefile target
+
+```
+
+# Install
+
+## Install MACOS
+```bash
+wget https://github.com/kick-project/maker/releases/latest/download/maker.rb
+brew install maker.rb
+```
+
+## Install RPM
+```bash
+sudo rpm -ivh https://github.com/kick-project/maker/releases/download/v1.1.0/maker-1.1.0.x86_64.rpm
+```
+
+## Install DEBs
+```bash
+wget https://github.com/kick-project/maker/releases/download/v1.1.0/maker_1.1.0_amd64.deb
+sudo apt install ./maker_1.1.0_amd64.deb
+```

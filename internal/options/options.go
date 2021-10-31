@@ -14,9 +14,9 @@ Usage:
 Options:
   -h --help          Show this screen
   --version          Show version
-  --dotenv=<files>   List of comma seperated paths to load dotenv files [default: ~/.env,.env]
+  --dotenv=<files>   List of comma separated paths to load dotenv files [default: ~/.env,.env]
   --menu=<makefile>  Print Makefile menu
-  --prefix=<prefix>  Scan for "<target>" then "<prefix><target>" when scaning makefiles [default: "_"]
+  --prefix=<prefix>  Scan for "<target>" then "<prefix><target>" when scanning makefiles [default: "_"]
   --scan=<makefile>  Scan make makefile for targets and wrap with dotenv variables [default: Makefile]
   <target>           makefile target
 `
