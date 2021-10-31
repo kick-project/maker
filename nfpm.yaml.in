@@ -3,9 +3,9 @@ arch: amd64
 platform: linux
 version: 'v${VERSION}'
 section: default
-maintainer: ${AUTHOR} <${EMAIL}>
+maintainer: Dexter Plameras <dexterp@gmail.com>
 description: |
-    maker is a make augmentor to support dotenv files and Makefile help
+    Maker is a make augmentation to support dotenv files and Makefile help
 license: Apache-2.0
 files:
     dist/maker_linux_amd64/maker: /usr/bin/maker
