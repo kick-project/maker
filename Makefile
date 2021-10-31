@@ -238,11 +238,11 @@ dist/maker-$(VERSION).rb: dist/maker.rb
 	@cp $< $@ 
 
 dist/maker.rb: maker.rb.in dist/maker-$(VERSION).tar.gz
-	@BASEURL="https://github.com/author/project/archive" VERSION=$(VERSION) SHA256=$(sha256sum dist/maker-$(VERSION).tar.gz | awk '{print $$1}') $(DOTENV) envsubst < $< > $@
+	@BASEURL=https://github.com/kick-project/maker/releases/download/v$(VERSION) VERSION=$(VERSION) SHA256=$$(sha256sum dist/maker-$(VERSION).tar.gz | awk '{print $$1}') $(DOTENV) envsubst < $< > $@ 
 
 tmp/maker.rb: maker.rb.in dist/maker-$(VERSION).tar.gz
 	@mkdir -p tmp
-	@BASEURL="file://$(PWD)/dist" VERSION=$(VERSION) SHA256=$(sha256sum dist/maker-$(VERSION).tar.gz | awk '{print $$1}') $(DOTENV) envsubst < $< > $@
+	@BASEURL="file://$(PWD)/dist" VERSION=$(VERSION) SHA256=$$(sha256sum dist/maker-$(VERSION).tar.gz | awk '{print $$1}') $(DOTENV) envsubst < $< > $@
 
 nfpm.yaml: nfpm.yaml.in VERSION
 	@VERSION=$(VERSION) $(DOTENV) envsubst < $< > $@
